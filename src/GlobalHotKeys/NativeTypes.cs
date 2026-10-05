@@ -44,7 +44,7 @@ public struct WNDCLASSEX
         classNamePtr = Marshal.StringToHGlobalUni("GlobalHotKeyWindowClass_" + Guid.NewGuid().ToString());
         return new WNDCLASSEX
         {
-            cbSize = (uint)Marshal.SizeOf(typeof(WNDCLASSEX)),
+            cbSize = (uint)Marshal.SizeOf<WNDCLASSEX>(),
             style = 0,
             lpfnWndProc = Marshal.GetFunctionPointerForDelegate(wndProc),
             cbClsExtra = 0,
